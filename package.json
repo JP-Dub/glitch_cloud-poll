@@ -1,27 +1,38 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
-  "name": "hello-express",
-  "version": "0.0.1",
-  "description": "A simple Node app built on Express, instantly up and running.",
+  "name": "clementinejs-fcc",
+  "version": "1.0.1",
+  "description": "The elegant and lightweight boilerplate for full stack JavaScript.",
   "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnstonbl01/clementinejs-fcc"
+  },
+  "homepage": "http://www.clementinejs.com/",
+  "bugs": "https://github.com/johnstonbl01/clementinejs-fcc/issues",
+  "keywords": [
+    "MongoDB",
+    "Mongoose",
+    "full stack",
+    "Express",
+    "Node",
+    "javascript",
+    "boilerplate"
+  ],
   "scripts": {
     "start": "node server.js"
   },
-  "dependencies": {
-    "express": "^4.16.4"
-  },
-  "engines": {
-    "node": "8.x"
-  },
-  "repository": {
-    "url": "https://glitch.com/edit/#!/hello-express"
-  },
+  "author": "Blake Johnston",
   "license": "MIT",
-  "keywords": [
-    "node",
-    "glitch",
-    "express"
-  ]
+  "dependencies": {
+    "chart.js": "^2.7.1",
+    "dotenv": "^1.2.0",
+    "express": "^4.12.4",
+    "express-session": "^1.11.3",
+    "jquery-shadow-animation": "^1.10.0",
+    "mongoose": "^4.1.0",
+    "nodemon": "^1.14.11",
+    "passport": "^0.3.0",
+    "passport-github": "^1.0.0",
+    "passport-local": "^1.0.0"
+  }
 }

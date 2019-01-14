@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FCC Challenge: Build a voting app</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/public/css/style.css"> 
+  </head>
+  <body>
+    
+    <nav class="navbar">
+	    <div class="nav-wrapper">
+		    <p class="navbar-left"><a href="/" title="Home Page">Cloud Poll</a></p>
+			  <p class="navbar-center"><span id="nav-welcome"></span></p>
+  			<p class="navbar-right"></p>
+	  	</div>
+    </nav>
+   
+    <div id="top-header" class="container">
+      <header>
+        <h1>Cloud Poll</h1>
+      </header>
+      <main>   
+        <p><em>Create an account to create and modify your polls!</em></p> 
+      </main>
+    </div>
+    
+    <div id="signup-header" class="container">
+      <header>
+        <h1>Sign Up</h1>
+      </header>
+      <main>
+        <form id="regform" method="post" enctype="multipart/form-data">
+          <label>Name / Display Name:</label><br>
+          <input class="input" title="Name is case-sensitive and required for signin" type="text" autocomplete="username" name="displayname" required size="32"><br>
+          <label>Email: <span style="font-size:1.4vmin"><em>(optional)</em></span></label><br>
+          <input class="input" title="Email is optional and used purely for demonstration/format and styling purposes" type="text" autocomplete="email" name="email" size="32"><br>
+          <label>Password:</label><br>
+          <input class="input" title="Password should be at least 4 characters long. This cannont be reset." type="password" autocomplete="new-password" name="password" required size="32" ><br>
+          <label>Confirm Password:</label><br>
+          <input class="input" title="Please confirm your password" type="password" name="confirm" required size="32"><br>
+          <button id ="register" type="submit" value="Sign Up"><p>Sign Up</p></button>
+          <p><!--INTENTIONAL BLANK SPACE--></p>
+        </form>
+        <!--<p id="signupResponse"><em></em></p>-->
+      </main>
+    </div>
+   
+    <footer class="navbar">
+      <p>Copyright &copy 2018 jDub's Code Studio</p>
+    </footer>
+     
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="common/ajax-functions.js"></script>
+    <script type="text/javascript" src="controllers/pageController.js"></script>
+    <script type="text/javascript" src="controllers/clientData.js"></script> 
+     
+  </body>
+</html>
