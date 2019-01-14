@@ -340,9 +340,10 @@ if (pathname === '/signup') {
    
         $('#register').click(function(e) {
             e.preventDefault();
+          
             var element = document.getElementById("regform").elements,
                 form = {};
-            
+            console.log(element)
             form.displayname = element.item(0).value;
             form.email = element.item(1).value || null;
             form.password = element.item(2).value;
@@ -368,7 +369,7 @@ if (pathname === '/signup') {
                 } else {
                     alert(res.success);
                     setTimeout(function(){
-                        window.location.href = "https://cloud-poll-jpiazza.c9users.io" ;
+                        window.location.href = "https://past-virgo.glitch.me/" ;
                     }, 1000);
                 }
             }); // end of ajax request
