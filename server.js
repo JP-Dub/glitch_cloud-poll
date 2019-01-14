@@ -1,22 +1,39 @@
-// server.js
-// where your node app starts
+'use strict';
 
-// init project
-const express = require('express');
-const app = express();
+var routes = require('./app/routes/index.js'),
+    session = require('express-session'),
+    passport = require('passport'),
+    mongoose = require('mongoose'),
+    express = require('express'),
+    app = express();
 
-// we've started you off with Express, 
-// but feel free to use whatever libs or frameworks you'd like through `package.json`.
+require('dotenv').load();
+require('./app/config/passport')(passport);
 
-// http://expressjs.com/en/starter/static-files.html
-app.use(express.static('public'));
+mongoose.connect(process.env.MONGO_URI, {useMongoClient : true});
+mongoose.Promise = global.Promise;
 
-// http://expressjs.com/en/starter/basic-routing.html
-app.get('/', function(request, response) {
-  response.sendFile(__dirname + '/views/index.html');
-});
+app.use('/controllers', express.static(process.cwd() + '/app/controllers'));
+app.use('/public', express.static(process.cwd() + '/public'));
+app.use('/common', express.static(process.cwd() + '/app/common'));
 
-// listen for requests :)
-const listener = app.listen(process.env.PORT, function() {
-  console.log('Your app is listening on port ' + listener.address().port);
+app.set('trust proxy', 1);
+app.use(session({
+    name: 'cloud_polling',
+	secret: 'secreteSerpentine', //'secretClementine',
+	resave: false,
+	saveUninitialized: true,
+	cookie : {
+	    secure: true
+	}
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+routes(app, passport);
+
+var port = process.env.PORT || 8080;
+app.listen(port,  function () {
+	console.log('Node.js listening on port ' + port + '...');
 });
