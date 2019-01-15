@@ -2,7 +2,7 @@
 var path = process.cwd(),
     bP = require('body-parser'),
     urlEncPar = bP.urlencoded({extended: true}),
-    ClickHandler = require(path + '/cloud-poll/app/controllers/clickHandler.js');
+    ClickHandler = require(path + '/app/controllers/clickHandler.js');
 
 module.exports = function(app, passport) {
     app.set("json spaces", 2);
@@ -15,22 +15,22 @@ module.exports = function(app, passport) {
     
     app.route('/')
         .get(function(req, res) {
-          res.sendFile(path + '/cloud-poll/public/index.html');
+          res.sendFile(path + '/public/index.html');
         });
         
     app.route('/poll-creation')
         .get(isLoggedIn, function(req, res, next) {
-          res.sendFile(path + '/cloud-poll/public/poll-creation.html'); 
+          res.sendFile(path + '/public/poll-creation.html'); 
         }); 
         
     app.route('/poll-vault')
         .get(function(req, res) {
-          res.sendFile(path + '/cloud-poll/public/poll-vault.html');
+          res.sendFile(path + '/public/poll-vault.html');
         });
         
     app.route('/signup')
         .get(function(req, res) {
-          res.sendFile(path + '/cloud-poll/public/signup.html');
+          res.sendFile(path + '/public/signup.html');
         });
         
     app.route('/poll-vault/:user')
