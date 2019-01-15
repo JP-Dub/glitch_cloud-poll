@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FCC Challenge: Build a voting app</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/public/css/style.css"> 
+  </head>
+  <body>
+  
+    <nav class="navbar">
+      <div class="nav-wrapper">
+        <p class="navbar-left"><a href="/" title="Home Page">Home</a><!-- | <a href="/logout/vault">Log Out</a>--></p>
+        <p class="navbar-center"><span id="nav-welcome"></span></p>
+        <p class="navbar-right"><select id="selectUser" >
+            <option value="default">Select User</option>
+          </select>
+        </p>
+      </div>
+    </nav>
+
+    <div id="vault-header" class="container"> 
+      <header>
+        <h1>Poll Vault</h1>
+      </header>
+      <main>   
+        <p><em>Select a poll to vote on and see the results of the poll</em><br><sub id="data">hint: press to edit your questions</sub></p> 
+      </main> 
+    </div> 
+    
+    <div id="poll-vault" class="container">
+      <header>
+        <h1>The Poll Collection</h1>
+      </header>
+      <div class="content">
+        <div class="left">
+          <h2>Survey Questions</h2> 
+          <article>
+            <ul id = "vaultResults">
+	    	      <!--questions show here
+		          <li>What color are your eyes?</li>
+		          -->
+            </ul>
+          </article>
+        </div>
+        <div class="right">
+          <article>
+            <canvas id="myChart" width="150" height="100"></canvas>
+            <form id="vaultChoices" method="post" enctype='multipart/form-data'>
+              <h2>Question Selected...</h2>
+            </form><br>
+          </article>
+        </div>
+      </div> 
+    </div>
+      
+    <footer class="navbar">
+      <p>Copyright &copy 2018 jDub's Code Studio</p>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script> 
+    <script type="text/javascript" src="/common/ajax-functions.js"></script>
+    <script type="text/javascript" src="/controllers/pageController.js"></script>
+  	<script type="text/javascript" src="/controllers/clientData.js"></script>
+
+  </body>
+</html>

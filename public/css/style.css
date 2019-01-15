@@ -1,0 +1,557 @@
+body {
+  position: relative;
+  font-family: Georgia, Helvetica, arial, sans-serif;
+  margin-top: 0;
+  margin-left: 2.5vw;
+  margin-right: 2.5vw;
+  height: auto;
+  z-index: -2;/*-2;*/
+  padding-bottom: 3vmin;
+  border: 1px solid white;
+}
+
+h1 {
+  font-size: 6vmin;/*6vw;*/
+  margin-top: 5px;
+  font-weight: bold;
+  color: rgb(41, 137, 216);
+  color: rgba(41, 137, 216, 1);
+  text-shadow: 4px 2px 2px dimgrey;
+}
+
+h2 {
+  font-size: 3vmin;/*3vw;*/
+  text-align: center;
+  color: rgb(41, 137, 216);
+  color: rgba(41, 137, 216, 1);
+}
+
+input, label, li, p, td, button {
+  font-size: 2vmin;
+}
+
+sub, sup {
+  font-size: 1.5vmin;
+}
+
+/* Navbar styling lines */
+.navbar {
+  z-index: 4;
+  position: fixed;
+  left: 2.5%;
+  width: 95%;
+  height: 5vmin; /*2.8em*/
+  color: white;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient editor/#1e5799+20,2989d8+50,1e5799+80&0+0,0.8+15,1+19,1+81,0.8+85,0+100;Blue+Two+Sided+Transparent */
+  background: -moz-linear-gradient(top, rgba(30,87,153,0) 0%, rgba(30,87,153,0.8) 15%, rgba(30,87,153,1) 19%, rgba(30,87,153,1) 20%, rgba(41,137,216,1) 50%, rgba(30,87,153,1) 80%, rgba(30,87,153,1) 81%, rgba(30,87,153,0.8) 85%, rgba(30,87,153,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(top, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* Old Webkit*/
+  background: -o-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* Opera 11.1+*/
+  background: linear-gradient(to bottom, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.navbar {
+  position: fixed;
+  left: 2.5%;
+  width: 95%;
+  height: 5vmin; /*2.8em*/
+  color: white;
+  background: -moz-linear-gradient(top, rgba(30,87,153,0) 0%, rgba(30,87,153,0.8) 15%, rgba(30,87,153,1) 19%, rgba(30,87,153,1) 20%, rgba(41,137,216,1) 50%, rgba(30,87,153,1) 80%, rgba(30,87,153,1) 81%, rgba(30,87,153,0.8) 85%, rgba(30,87,153,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(top, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* Old Webkit*/
+  background: -o-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* Opera 11.1+*/
+  background: linear-gradient(to bottom, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.nav-wrapper{
+  position: absolute;
+  margin-top: -.5em;
+  margin-left:10%;
+  width: 80%;
+}
+
+.navbar-left {
+  float: left;
+  width: 30%;
+  text-align: left;
+}
+
+.navbar-center {
+  display: inline-block;
+  text-align: center;
+  width: 40%;
+}
+
+.navbar-right {
+  float: right;
+  width: 30%;
+  text-align: right;
+}
+
+.container {
+  border: .9vmin outset lightgrey; /*6px*/
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+6,dedede+19,d2d2d2+22,ededed+39,d6d6d6+50,dedede+58,c4c4c4+67,d6d6d6+83,d6d6d6+83,ededed+90 */
+  background: rgb(255,255,255); /* Old browsers */
+  background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 6%,rgba(222,222,222,1) 19%,rgba(210,210,210,1) 22%,rgba(237,237,237,1) 39%,rgba(214,214,214,1) 50%,rgba(222,222,222,1) 58%,rgba(196,196,196,1) 67%,rgba(214,214,214,1) 83%,rgba(214,214,214,1) 83%,rgba(237,237,237,1) 90%); /* Chrome10-25, Safari5.1-6 */
+  background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 6%, rgba(222,222,222,1) 19%, rgba(210,210,210,1) 22%, rgba(237,237,237,1) 39%, rgba(214,214,214,1) 50%, rgba(222,222,222,1) 58%, rgba(196,196,196,1) 67%, rgba(214,214,214,1) 83%, rgba(214,214,214,1) 83%, rgba(237,237,237,1) 90%); /* FF 3.6-15 */
+  background: -o-linear-gradient(45deg, rgba(255,255,255,1) 6%,rgba(222,222,222,1) 19%,rgba(210,210,210,1) 22%,rgba(237,237,237,1) 39%,rgba(214,214,214,1) 50%,rgba(222,222,222,1) 58%,rgba(196,196,196,1) 67%,rgba(214,214,214,1) 83%,rgba(214,214,214,1) 83%,rgba(237,237,237,1) 90%); /* Opera 11.1+ */
+  background: -webkit-gradient(45deg, rgba(255,255,255,1) 6%, rgba(222,222,222,1) 19%, rgba(210,210,210,1) 22%, rgba(237,237,237,1) 39%, rgba(214,214,214,1) 50%, rgba(222,222,222,1) 58%, rgba(196,196,196,1) 67%, rgba(214,214,214,1) 83%, rgba(214,214,214,1) 83%, rgba(237,237,237,1) 90%); /* Old webkit */
+  background: linear-gradient(45deg, rgba(255,255,255,1) 6%,rgba(222,222,222,1) 19%,rgba(210,210,210,1) 22%,rgba(237,237,237,1) 39%,rgba(214,214,214,1) 50%,rgba(222,222,222,1) 58%,rgba(196,196,196,1) 67%,rgba(214,214,214,1) 83%,rgba(214,214,214,1) 83%,rgba(237,237,237,1) 90%); /* W3C, IE 10+, FF 16+, Chrome 26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+header{
+  text-align: center;
+}
+
+main {
+  margin-top: -3.5vmin;/*-35px;*/
+  margin-left: auto;
+  margin-right: auto;
+  border-top: .6vmin double white; /*6px*/
+  position: relative;
+  text-align: center;
+  width: 30vmin;/*300px;*/
+  height: auto; /*75px*/
+  cursor: default;
+}
+
+main p{  
+  margin-top: 1vmin;/*10px;*/
+}
+
+footer {
+  bottom: 0;
+  text-align: center;
+  z-index: 4;
+}
+
+footer p {
+  margin-top: .7em;
+}
+
+/* POLL-CREATION STYLING */
+#edit {
+  width: auto;/*46vmin; /*400px;*/
+  height: 18vmin;/*200px;*/
+  border: inset 6px white; /*6px white;*/
+  background: rgb(255,255,255); /* Old browsers */
+  background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 6%,rgba(222,222,222,1) 19%,rgba(210,210,210,1) 22%,rgba(237,237,237,1) 39%,rgba(214,214,214,1) 50%,rgba(222,222,222,1) 58%,rgba(196,196,196,1) 67%,rgba(214,214,214,1) 83%,rgba(214,214,214,1) 83%,rgba(237,237,237,1) 90%); /* Chrome10-25, Safari5.1-6 */
+  background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 6%, rgba(222,222,222,1) 19%, rgba(210,210,210,1) 22%, rgba(237,237,237,1) 39%, rgba(214,214,214,1) 50%, rgba(222,222,222,1) 58%, rgba(196,196,196,1) 67%, rgba(214,214,214,1) 83%, rgba(214,214,214,1) 83%, rgba(237,237,237,1) 90%); /* FF 3.6-15 */
+  background: -o-linear-gradient(45deg, rgba(255,255,255,1) 6%,rgba(222,222,222,1) 19%,rgba(210,210,210,1) 22%,rgba(237,237,237,1) 39%,rgba(214,214,214,1) 50%,rgba(222,222,222,1) 58%,rgba(196,196,196,1) 67%,rgba(214,214,214,1) 83%,rgba(214,214,214,1) 83%,rgba(237,237,237,1) 90%); /* Opera 11.1+ */
+  background: -webkit-gradient(45deg, rgba(255,255,255,1) 6%, rgba(222,222,222,1) 19%, rgba(210,210,210,1) 22%, rgba(237,237,237,1) 39%, rgba(214,214,214,1) 50%, rgba(222,222,222,1) 58%, rgba(196,196,196,1) 67%, rgba(214,214,214,1) 83%, rgba(214,214,214,1) 83%, rgba(237,237,237,1) 90%); /* Old webkit */
+  background: linear-gradient(45deg, rgba(255,255,255,1) 6%,rgba(222,222,222,1) 19%,rgba(210,210,210,1) 22%,rgba(237,237,237,1) 39%,rgba(214,214,214,1) 50%,rgba(222,222,222,1) 58%,rgba(196,196,196,1) 67%,rgba(214,214,214,1) 83%,rgba(214,214,214,1) 83%,rgba(237,237,237,1) 90%); /* W3C, IE 10+, FF 16+, Chrome 26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  overflow: auto;
+}
+
+#list {
+  margin-top: 2px;
+}
+
+#creation-form {
+  margin-top: 10px;
+  margin-left: 0;
+  text-align: center;
+}
+
+#ques-header {
+  position: relative; 
+  margin-top: 6vmin;
+  margin-left: auto; /*margin-left: -325px;*/
+  margin-right: auto;
+  width: 56vmin;/*600px;*/
+  height: auto; /*38vmin;/*380px;*/
+  box-shadow: 2vmin 2vmin 1vmin #595959; /*26px 26px 8px #595959;*/
+}
+
+#ques-header header {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 45vmin;
+  cursor: default;
+}
+
+#ques-header:hover {
+  cursor: crosshair;
+}
+
+.hint {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  text-align: center;
+}
+
+.questions {
+  padding-top: 5px;
+  width: 47vmin; /*400px;*/
+}
+
+#choice-header {
+  position: relative;
+  margin-left: auto; /*-295px*/
+  margin-right: auto;
+  margin-top: 3vmin; /*35px;*/
+  width: auto;/*65vmin; /*600px;*/
+  height: auto;
+}
+
+.choices {
+  width: 46vmin; /*400px;*/
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#btn-container {
+  position: relative;
+  padding-top: 1.2vmin; /*10px;*/
+  margin-left: auto;
+  margin-right: auto;
+  width: auto; /*65vmin; /*400px;*/
+}
+.btn-wrapper {
+  width: 65vmin;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#submit-btn, #options-btn, #delete-btn, #update-btn {
+  display: inline-block;
+  width: 15.5vmin; /*150px;*/
+}
+
+#submit-btn {
+  z-index: 1;
+  margin-top: 1.4vmin; /*12px;*/
+}
+
+#options-btn {
+  z-index: 2;
+}
+
+ol li {
+  margin-left: -10px; /*45px*/
+  text-align: justify;
+}
+
+ol input {
+  border: 1px solid dimgray;
+  text-align: left;
+  margin-left: 5px; /*-40px*/
+}
+
+li {
+  padding: 4px 8px;
+}
+
+li a {
+  text-decoration: none;
+}
+
+li a:link {
+  color: black;
+}
+
+li a:visited {
+  color: black;
+}
+
+li a:hover {
+  color: hotpink;
+}
+
+li a:focus {
+  color: rgb(41, 137, 216);  
+  color: rgba(41,137,216,1);
+}
+
+/* POLL-CREATION STYLING END */
+
+/* POLL-VAULT STYLING */
+
+select {
+  font-size: 1.65vmin;
+  border-radius: .5em;
+  color: rgb(41, 137, 216);
+  color: rgba(41, 137, 216, 1);
+}
+
+#vault-header {
+  position: relative; 
+  left: 50%;
+  margin-top: 6vmin;/*3.5em;*/
+  margin-left: -21vmin; /*-14.06em; -22.8vmin; -225px; -22.5%*/
+  width: 40vmin;/* 25em or 400px;*/
+  height: auto;/*18vmin; /*11.25em or 180px;*/
+  box-shadow: 2vmin 2vmin 1vmin #595959;/*1.625em 1.625em .5em; 26px 26px 8px*/
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari 3.1+ */
+     -moz-user-select: none; /* Firefox 2+*/
+      -ms-user-select: none; /* IE 10+ */
+          user-select: none;
+}
+
+#vault-header:active {
+  box-shadow: 1vmin 1vmin .375vmin #595959;/*16px 16px 6px*/
+  transform: translate(.375vmin, .375vmin); /*.375vem; 6px;*/
+}
+
+#poll-vault {
+  margin-top: 3vmin; /*2.187em; 35px;*/
+  width: auto;
+  height: auto; /*70%*/
+  padding: 2.5vmin; /*1.25em; 20px;*/
+}
+
+.content {
+  position: relative;
+  margin-left: 0;
+  width: 100%;
+}
+
+.left article {
+  text-align: center;
+}
+
+.right article {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+div.left, div.right {
+  box-sizing: border-box;
+  position: absolute;
+  border: 1px solid black;
+  width: 48.5%;
+  height: 100%;
+  overflow: auto;
+}
+
+.left {
+  box-shadow: inset -.2vmin .2vmin 1.2vmin .4vmin #595959;/*-2px 2px 28px 5px black;*/
+  border-radius: 0 10px 10px 0; 
+  margin-right: 10px;
+  right: 50%;
+}
+
+.right {
+  box-shadow: inset -.2vmin .2vmin 1.2vmin .4vmin #595959;;
+  border-radius: 10px 0 0 10px;
+  margin-left: 10px;
+  left: 50%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* #vaultChoices styling for questions/options/votes/charts */
+.voterSpace {
+  position: relative;
+  width: 38vmin;/*40vmin; /*400px;*/
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th, td {
+  padding: 5px;
+}
+
+.leftSpace {
+  text-align: left;
+  width: 45%;
+}
+
+.centerSpace {
+  text-align: center;
+}
+
+.rightSpace {
+  text-align: right;
+  width: 45%;
+}
+ 
+#myChart {
+  margin-top: 1.5vmin;
+  margin-left: auto;/*15px;*/
+  margin-right: auto;
+}
+
+#centerSp {
+  left: 40%;
+}
+
+#voterBtn {
+  width: 10vmin; /*150px;*/
+  height: 3.5vmin; /*30px;*/
+  padding: 0;
+  margin: 0;
+}
+
+/* POLL-VAULT STYLING END */
+
+/* POLL-SIGNUP STYLING */
+
+#top-header {
+  position: relative; 
+  left: 50%;
+  margin-top: 6vmin;/*3.5em;*/
+  margin-left: -21vmin; /*-14.06em; -21vmin; -225px; -22.5%*/
+  width: 40vmin;/* 25em or 400px;*/
+  height: auto;/*15vmin; /*11.25em or 180px;*/
+  box-shadow: 2vmin 2vmin 1vmin #595959;
+  /*min-width: 200px; min-height: 90px;*/
+  /*max-width: 800px; max-height: 360px;*/
+}
+
+/* Login header styling and position */
+#login-header, #signin-header, #signup-header {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50vmin;
+  box-shadow: 1.2vmin 1.2vmin .1vmin #595959;
+  /*min-width: 250px; max-width: 900px;*/
+} 
+
+#login-header {
+  margin-top: 3vmin; /*35px;*/
+  min-height: 157.5px; /*max-height: 427.5px;*/
+  height: 25vmin;/*285px;*/
+}
+
+#signin-header {
+  height: auto;/*21vmin;/*250px;*/
+  margin-top: -24.25vmin; /*-25.75vmin*/
+  z-index : -3;
+  border-top: 0;
+  box-shadow: 0 0 0 #595959;
+}
+
+#signin-header main {
+  border-top: 1px solid lightgrey;
+  height: auto;
+}
+
+#signup-header {
+  margin-top: 3vmin;/*35px;*/
+}
+
+/* Button styling */
+img {
+  height: 3.8vmin;
+  width: 3.8vmin;
+  float: left;
+  margin-top: .55vmin;/*8px;*/
+  margin-left: .4vmin;/*5px;*/
+  border-radius: 2.5vmin;/*30px;*/
+}
+
+button {
+  z-index: 1;
+  margin-top: 1.5vmin;/*12px;*/
+  height: 5.5vmin;/*50px;*/
+  width: 26vmin;/*220px;*/
+  color: white;
+  border-radius: 1.2vmin;/*8px;*/
+  background-color: #8c8c8c;
+  border: 1px solid white;
+  box-shadow: inset -4px -4px 26px 6px #4d4d4d;
+  cursor: pointer; 
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  background-color: rgb(41, 137, 216);
+  background-color: rgba(41, 137, 216, 1);
+  box-shadow: inset -4px -4px 26px 4px #1c5f97;
+}
+
+button:active {
+  box-shadow: none;
+}
+
+button p {
+  margin-top: 1.5vmin;/*15px;*/
+}
+
+#github-btn, #account-btn {
+  margin-top: 2.5vmin;/*12px;*/
+  height: 5vmin;/*50px;*/
+  width: 16vmin;/*220px;*/
+}
+
+#account-btn, #signin-btn {
+  margin-top: 1.5vmin;/*12px;*/
+  /*height: 5vmin;/*50px;
+  width: 18vmin;/*220px;*/
+}
+
+#signin-btn, #register {
+  width: 30vmin;/*220px;*/
+  height: 5vmin;
+}
+
+#register {
+  margin-top: 1.5vmin;
+}
+
+form {
+  padding-top: 1vmin;
+  margin-top: 1vmin;/*10px;*/
+  margin-left: 0; /*20px;*/
+  text-align: left;
+}
+
+#form {
+    border-top: .6vmin double white; 
+}
+
+#regform {
+  margin-top: 0;
+}
+
+.input {
+  width: 29.5vmin; 
+  height: 2vmin;
+  background-color: white;
+  text-indent: 5px;
+}
+
+input:focus {
+  background-color: #ccffcc;
+}
+
+#signupResponse {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 6vmin; /*45px;*/
+  color: blue;
+  text-align: center;
+}
+
+/* POLL-SIGNUP STYLING END */
+
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: lime;
+}
+
+a:hover {
+    color: hotpink;
+}
+
+a:active {
+    color: blue;
+}

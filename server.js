@@ -1,6 +1,6 @@
 'use strict';
 
-var routes = require('./cloud-poll/app/routes/index.js'),
+var routes = require('./app/routes/index.js'),
     session = require('express-session'),
     passport = require('passport'),
     mongoose = require('mongoose'),
@@ -8,14 +8,14 @@ var routes = require('./cloud-poll/app/routes/index.js'),
     app = express();
 
 require('dotenv').load();
-require('./cloud-poll/app/config/passport')(passport);
+require('./app/config/passport')(passport);
 
 mongoose.connect(process.env.MONGO_URI, {useMongoClient : true});
 mongoose.Promise = global.Promise;
 
-app.use('/controllers', express.static(process.cwd() + './cloud-poll/app/controllers'));
-app.use('/public', express.static(process.cwd() + './cloud-poll/public'));
-app.use('/common', express.static(process.cwd() + './cloud-poll/app/common'));
+app.use('/controllers', express.static(process.cwd() + '/app/controllers'));
+app.use('/public', express.static(process.cwd() + '/public'));
+app.use('/common', express.static(process.cwd() + '/app/common'));
 
 app.set('trust proxy', 1);
 app.use(session({
