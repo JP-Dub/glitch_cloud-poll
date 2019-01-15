@@ -1,14 +1,14 @@
 {
-  "name": "clementinejs-fcc",
+  "name": "cloud-poll / clementinejs-fcc",
   "version": "1.0.1",
   "description": "The elegant and lightweight boilerplate for full stack JavaScript.",
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johnstonbl01/clementinejs-fcc"
+    "url": "https://github.com/JP-Dub/cloud-poll"
   },
-  "homepage": "http://www.clementinejs.com/",
-  "bugs": "https://github.com/johnstonbl01/clementinejs-fcc/issues",
+  "homepage": "https://github.com/JP-Dub/",
+  "bugs": "https://github.com/JP-Dub/cloud-poll/issues",
   "keywords": [
     "MongoDB",
     "Mongoose",
@@ -21,7 +21,7 @@
   "scripts": {
     "start": "node server.js"
   },
-  "author": "Blake Johnston",
+  "author": "Joel Ward",
   "license": "MIT",
   "dependencies": {
     "chart.js": "^2.7.3",
@@ -33,6 +33,7 @@
     "nodemon": "^1.18.9",
     "passport": "^0.4.0",
     "passport-github": "^1.1.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "helmet": "^3.15.0"
   }
 }

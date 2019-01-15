@@ -26,7 +26,7 @@ var pathname = window.location.pathname;
     // for index.html animation for login toggle
     var num = 0;
     $("#account-btn").click( function() {
-      console.log('clicked')
+     
       var sign = $("#signin-header"), 
           vmin = findVmin(1.21, true),
           blur = Math.round(findVmin(.1, true)); 

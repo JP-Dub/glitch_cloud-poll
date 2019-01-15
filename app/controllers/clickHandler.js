@@ -219,7 +219,7 @@ this.modifyPoll = function(req, res) {
 };
 //poll-vault/:user
 this.usersPoll = function(req, res) { 
-    console.log(req.params.user)
+    //console.log(req.params.user)
     var user = req.params.user;
 
         var multiple = null;
