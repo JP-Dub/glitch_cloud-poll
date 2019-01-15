@@ -14,10 +14,11 @@ require('./app/config/passport')(passport);
 mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true});
 mongoose.Promise = global.Promise;
 
-app.use(helmet());
+
 app.use('/controllers', express.static(process.cwd() + '/app/controllers'));
 app.use('/public', express.static(process.cwd() + '/public'));
 app.use('/common', express.static(process.cwd() + '/app/common'));
+app.use(helmet());
 
 app.set('trust proxy', 1);
 app.use(session({
