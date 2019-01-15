@@ -1,6 +1,7 @@
 'use strict';
 /* global $, appUrl, ajaxFunctions, Chart */
 var pathname = window.location.pathname;
+var appUrl = window.location.origin;
 
 if (pathname === '/poll-creation') {
     

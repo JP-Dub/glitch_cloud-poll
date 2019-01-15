@@ -1,6 +1,7 @@
 'use strict';
 /* global $, appUrl, ajaxFunctions */
 var pathname = window.location.pathname;
+var appUrl = window.location.origin;
 
 (function () {
     
