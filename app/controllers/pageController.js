@@ -2,7 +2,7 @@
 /* global $, appUrl, ajaxFunctions */
 var pathname = window.location.pathname;
 var appUrl = window.location.origin;
-
+let ajaxFunctions = require('../ajax-functions.js');
 (function () {
     
     function findVmin(x, y) {
