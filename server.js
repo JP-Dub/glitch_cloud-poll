@@ -10,7 +10,7 @@ var routes = require('./app/routes/index.js'),
 require('dotenv').load();
 require('./app/config/passport')(passport);
 
-mongoose.connect(process.env.MONGO_URI, {useMongoClient : true});
+mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true});
 mongoose.Promise = global.Promise;
 
 app.use('/controllers', express.static(process.cwd() + '/app/controllers'));

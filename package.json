@@ -24,15 +24,15 @@
   "author": "Blake Johnston",
   "license": "MIT",
   "dependencies": {
-    "chart.js": "^2.7.1",
-    "dotenv": "^1.2.0",
-    "express": "^4.12.4",
-    "express-session": "^1.11.3",
+    "chart.js": "^2.7.3",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "jquery-shadow-animation": "^1.10.0",
-    "mongoose": "^4.1.0",
-    "nodemon": "^1.14.11",
-    "passport": "^0.3.0",
-    "passport-github": "^1.0.0",
+    "mongoose": "^5.4.3",
+    "nodemon": "^1.18.9",
+    "passport": "^0.4.0",
+    "passport-github": "^1.1.0",
     "passport-local": "^1.0.0"
   }
 }
