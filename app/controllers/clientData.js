@@ -2,7 +2,6 @@
 /* global $, appUrl, ajaxFunctions, Chart */
 var pathname = window.location.pathname;
 
-
 // controls data on Poll Creation page
 if (pathname === '/poll-creation') {
     
@@ -167,8 +166,7 @@ if (pathname === '/poll-creation') {
     })(); // function()   
 } // if('/poll-creation')
 
-
-// control data on Poll-Vault page
+// control data on Poll Vault page
 if (pathname === '/poll-vault') {
 
     (function () {
@@ -335,7 +333,7 @@ if (pathname === '/poll-vault') {
     })();  // function()    
 } // if('/poll-vault')
 
-
+// control data for signup page
 if (pathname === '/signup') {
 
     (function(){    

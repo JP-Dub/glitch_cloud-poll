@@ -282,9 +282,8 @@ function ClickHandler () {
             res.json({ "success": "Thank you for signing up! You'll be redirected to the sign in page."});    
           }
         }); // User.findOne()
-          } // else statement 
-        
-  };   
+      } // else statement   
+  };// this.createUser()   
 }
 
 module.exports = ClickHandler;
