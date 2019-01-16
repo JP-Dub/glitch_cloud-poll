@@ -52,16 +52,18 @@ module.exports = function (passport) {
 	passport.use(new LocalStrategy(
         function(username, password, done) {
             User.findOne({ "signin.displayName" : username }, function(err, user) {
-              console.log(user, 'user')
+              
                 if (err) return done(err); 
-                var validPassword;
-                bcrypt.compare(password, user.signin.password, (err, res) => err ? console.error(err) : validPassword = res );
+                
+                // check user password against stored hashed password
+                var validPassword = bcrypt.compare(password, user.signin.password, (err, res) => err ? console.error(err) : res);
+                
                 
                 if (!user) {
                     return done(null, false, { message: 'Username not found. Please return to previous page to re-try or sign-up for a new account.' });
                 }
-                console.log(validPassword)
-                if (user.signin.password !== password) {
+                
+                if (!validPassword) {
                     return done(null, false, { message: 'Incorrect password. Please return to previous page to re-try.' });
                 }
                 

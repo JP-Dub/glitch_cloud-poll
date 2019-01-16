@@ -159,7 +159,7 @@ module.exports = function(user, path, form, forward) {
     
     
     if(path === '/poll/chart') {
-       
+        console.log('/poll/chart')
         User.find({_id: "5ad773bb70b87312d878ac8a"})
             .exec(function (err, user) {
                 if(err) return console.error(err);
@@ -181,7 +181,7 @@ module.exports = function(user, path, form, forward) {
     
     
     if(path === '/poll-vault/:user') {
-
+      console.log('/poll-vault/:user')
         var multiple = null;
         if(user === "default") {
             multiple = true;
@@ -207,9 +207,9 @@ module.exports = function(user, path, form, forward) {
                         userPoll = user[b];
                         
                         answers.forEach(function(a,b) {
-                            if(answers[b].options === form.vote ) {
-                                answers[b].votes += 1;
-                            }
+                          if(answers[b].options === form.vote ) {
+                            answers[b].votes += 1;
+                          }
                         });
                     }
                 }
@@ -219,19 +219,19 @@ module.exports = function(user, path, form, forward) {
                 if(err)return console.error(err);
                 
                 findUser(true, null, function(user) {
-                    forward(user);
+                  forward(user);
                 });
             }, {"returnOriginal": false});
         }); //findUser()
     } // if('/poll/votes')
 
-
+    /*
     if(path === '/signup/:user') {
         
         var displayName = form.displayname,
             email = form.email,
             password = form.password;
-
+        console.log(form)
         if(email !== "" && !email.match(regEx)) {
             forward({ "email" : "Your email doesn't appear valid." });
         } else
@@ -253,8 +253,7 @@ module.exports = function(user, path, form, forward) {
                     newUser.signin.password = password;
                     
                     newUser.save(function (err) {
-                        if(err)return console.error(err);
-                        //console.log(newUser, "newUser");
+                        if(err)return console.error(err);                      
                     });
                     
                     forward({ "success": "Thank you for signing up! You'll be redirected to the sign in page."});    
@@ -262,5 +261,5 @@ module.exports = function(user, path, form, forward) {
             }); // User.findOne()
         } // else statement 
     } // if('/signup/:user')
-   
+    */
 };
