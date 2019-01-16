@@ -5,28 +5,29 @@ var Users  = require('../models/users.js'),
 
 function ClickHandler () {
     
-    var validEmail = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm,
+    let validEmail = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm;
         reg        = /(^\w)(.+)($\b|.)/g; // for process() 
 
-    function formatString(match, p1, p2) {
-        return p1.toUpperCase() + p2; //.toLowerCase();
-    }
     
     // formats grammer for questions and answers 
     function process(a, q, done) {    
-        var question = "",
-            choice   = []; 
+      var regExp   = /(^\w)(.+)($\b|.)/g,
+          question = "",
+          choice   = []; 
         
-        // format question
-        question = q.replace(reg, formatString) + "?";
+      var formatString = (match, p1, p2) => p1.toUpperCase() + p2; 
+      
+      // format question
+      question = q.replace(regExp, formatString) + "?";
         
-        // format answers      
-        a.forEach( val => {
-            if(val !== "") {
-                choice.push( val.replace(reg, formatString) );
-            }
-        });
-    done(question, choice);
+      // format answers / ignore blank answer fields     
+      a.forEach( val => {
+        if(val !== "") {
+          choice.push( val.replace(reg, formatString) );
+        }
+      });
+        
+      done(question, choice);
     } // process()
 
     function findUser(multiple, single, done) {
