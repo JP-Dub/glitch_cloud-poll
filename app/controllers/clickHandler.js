@@ -255,6 +255,7 @@ this.createUser = function(req, res) {
                 } else {
                     var currentTime = new Date(Date.now()).toString(),
                         newUser = new Users();
+                    
                     newUser.date.time = currentTime;
                     newUser.signin.account = "CP Account";
                     newUser.signin.displayName = displayName;
@@ -263,7 +264,7 @@ this.createUser = function(req, res) {
                     
                     newUser.save(function (err) {
                         if(err)return console.error(err);
-                        console.log(newUser, "newUser");
+                        //console.log(newUser, "newUser");
                     });
                     
                     res.json({ "success": "Thank you for signing up! You'll be redirected to the sign in page."});    
