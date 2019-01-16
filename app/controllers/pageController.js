@@ -51,7 +51,7 @@ var pathname = window.location.pathname;
           apiUrl = appUrl + '/api/:user';
    
       var updateHtmlElement = function(data, element, userProperty) {
-        element.innerHTML = "Welcome,  " + data[userProperty];
+          element.innerHTML = "Welcome,  " + data[userProperty];
       };
 
       ajaxFunctions.ready(ajaxFunctions.ajaxRequest('GET', apiUrl, function (data) {

@@ -368,7 +368,7 @@ if (pathname === '/signup') {
                 } else {
                     alert(res.success);
                     setTimeout(function(){
-                        window.location.href = "https://cloud-poll-jpiazza.c9users.io" ;
+                        window.location.href = "https://cloud-poll.glitch.me/";
                     }, 1000);
                 }
             }); // end of ajax request
