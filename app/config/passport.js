@@ -55,15 +55,13 @@ module.exports = function (passport) {
               
                 if (err) return done(err); 
                 
-                // check user password against stored hashed password
-                var validPassword = bcrypt.compare(password, user.signin.password, (err, res) => err ? console.error(err) : res );
-                
-                
                 if (!user) {
                     return done(null, false, { message: 'Username not found. Please return to previous page to re-try or sign-up for a new account.' });
                 }
-                console.log('validPassword', validPassword)
-                if (!validPassword) {
+              
+                // check user password against stored hashed password
+               bcrypt.compare(password, user.signin.password, (err, res) => {)
+               if () {
                     return done(null, false, { message: 'Incorrect password. Please return to previous page to re-try.' });
                 }
                 
