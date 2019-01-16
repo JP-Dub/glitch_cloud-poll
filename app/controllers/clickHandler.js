@@ -219,6 +219,7 @@ this.modifyPoll = function(req, res) {
     } // if('/poll/votes')    
 
 };
+  
 //poll-vault/:user
 this.usersPoll = function(req, res) { 
     //console.log(req.params.user)
@@ -234,13 +235,13 @@ this.usersPoll = function(req, res) {
             res.json(user);
         });
 };
-//signup/:user
+  
+// signup/:user
 this.createUser = function(req, res) {
-        var form = req.body;
-
-        var displayName = form.displayname,
-            email = form.email,
-            password = form.password;
+        var form        = req.body,
+            displayName = form.displayname,
+            email       = form.email,
+            password    = form.password;
 
         if(email !== "" && !email.match(validEmail)) {
             res.json({ "email" : "Your email doesn't appear valid." });
@@ -256,7 +257,8 @@ this.createUser = function(req, res) {
                 } else {                                      
                     
                     var newUser = new Users();
-
+                    
+                    // encrypt user password and save user profile
                     bcrypt.hash(password, 10, (err, hash) => {
                       newUser.date.time =  new Date(Date.now()).toString();
                       newUser.signin.account = "CP Account";

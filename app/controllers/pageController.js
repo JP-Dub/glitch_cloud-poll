@@ -1,4 +1,7 @@
+/* This page is used to control attributes of pages */
+
 'use strict';
+
 /* global $, appUrl, ajaxFunctions */
 var pathname = window.location.pathname;
 

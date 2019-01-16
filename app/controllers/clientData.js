@@ -2,6 +2,8 @@
 /* global $, appUrl, ajaxFunctions, Chart */
 var pathname = window.location.pathname;
 
+
+// controls data on Poll Creation page
 if (pathname === '/poll-creation') {
     
     (function () {
@@ -166,6 +168,7 @@ if (pathname === '/poll-creation') {
 } // if('/poll-creation')
 
 
+// control data on Poll-Vault page
 if (pathname === '/poll-vault') {
 
     (function () {
