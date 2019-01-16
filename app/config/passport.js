@@ -60,12 +60,13 @@ module.exports = function (passport) {
                 }
               
                 // check user password against stored hashed password
-               bcrypt.compare(password, user.signin.password, (err, res) => {)
-               if () {
-                    return done(null, false, { message: 'Incorrect password. Please return to previous page to re-try.' });
-                }
+                bcrypt.compare(password, user.signin.password, (err, validPassword) => {
+                  if (!validPassword) {
+                      return done(null, false, { message: 'Incorrect password. Please return to previous page to re-try.' });
+                  }
                 
-                return done(null, user);
+                  return done(null, user);
+               });
             });
         }
     ));
