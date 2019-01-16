@@ -9,7 +9,7 @@ module.exports = function(app, passport) {
   
   	function isLoggedIn (req, res, next) {
   	   req.isAuthenticated() ? next() : res.redirect('/');
-	}
+	  }
     
     var clickHandler = new ClickHandler();
     
