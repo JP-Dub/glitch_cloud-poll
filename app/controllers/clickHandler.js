@@ -1,10 +1,11 @@
 'use strict';
 
-var Users = require('../models/users.js');
+var Users  = require('../models/users.js'),
+    bcrypt = require('bcrypt');
 
 function ClickHandler () {
     // validates email
-    var regEx = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm;
+    var validEmail = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm;
     var reg = /(^\w)(.+)($\b|.)/g; // for process() 
 
     function repairSent(match, p1, p2) {
@@ -241,7 +242,7 @@ this.createUser = function(req, res) {
             email = form.email,
             password = form.password;
 
-        if(email !== "" && !email.match(regEx)) {
+        if(email !== "" && !email.match(validEmail)) {
             res.json({ "email" : "Your email doesn't appear valid." });
         } else
         if(password.length < 4 || password !== form.confirm || password === "") {
@@ -252,16 +253,18 @@ this.createUser = function(req, res) {
 
                 if (user) {
                     return res.json({"user": "There is already a user with this name!"});
-                } else {
+                } else {                                      
                     var currentTime = new Date(Date.now()).toString(),
-                        newUser = new Users();
+                        newUser     = new Users();
                     
-                    newUser.date.time = currentTime;
-                    newUser.signin.account = "CP Account";
-                    newUser.signin.displayName = displayName;
-                    newUser.signin.email = email || null;
-                    newUser.signin.password = password;
-                    
+                    bcrypt.hash(password, 10, (err, hash) => {
+                      newUser.date.time = currentTime;
+                      newUser.signin.account = "CP Account";
+                      newUser.signin.displayName = displayName;
+                      newUser.signin.email = email || null;
+                      newUser.signin.password = hash;
+                    });
+                  
                     newUser.save(function (err) {
                         if(err)return console.error(err);
                         //console.log(newUser, "newUser");

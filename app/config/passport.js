@@ -52,6 +52,7 @@ module.exports = function (passport) {
         function(username, password, done) {
             User.findOne({ "signin.displayName" : username }, function(err, user) {
                 if (err) return done(err); 
+              
                 
                 if (!user) {
                     return done(null, false, { message: 'Username not found. Please return to previous page to re-try or sign-up for a new account.' });
