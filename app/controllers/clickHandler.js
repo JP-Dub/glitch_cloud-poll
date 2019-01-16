@@ -4,21 +4,26 @@ var Users  = require('../models/users.js'),
     bcrypt = require('bcrypt');
 
 function ClickHandler () {
-    // validates email
-    var validEmail = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm;
-    var reg = /(^\w)(.+)($\b|.)/g; // for process() 
+    
+    var validEmail = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm,
+        reg        = /(^\w)(.+)($\b|.)/g; // for process() 
 
-    function repairSent(match, p1, p2) {
+    function formatString(match, p1, p2) {
         return p1.toUpperCase() + p2; //.toLowerCase();
     }
-     
+    
+    // formats grammer for questions and answers 
     function process(a, q, done) {    
-        var choice = [], question = ""; 
+        var question = "",
+            choice   = []; 
         
-        question = q.replace(reg, repairSent) + "?";
+        // format question
+        question = q.replace(reg, formatString) + "?";
+        
+        // format answers      
         a.forEach( val => {
             if(val !== "") {
-                choice.push( val.replace(reg, repairSent) );
+                choice.push( val.replace(reg, formatString) );
             }
         });
     done(question, choice);

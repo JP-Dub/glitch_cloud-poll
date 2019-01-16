@@ -11,7 +11,8 @@ module.exports = function(user, path, form, forward) {
     function repairSent(match, p1, p2) {
         return p1.toUpperCase() + p2; //.toLowerCase();
     }
-     
+    
+    // clean up question with capital letter and question mark
     function process(a, q, done) {    
         question = q.replace(reg, repairSent) + "?";
         a.forEach( function(val) {

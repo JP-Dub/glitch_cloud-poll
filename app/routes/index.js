@@ -70,7 +70,7 @@ module.exports = function(app, passport) {
          passport.authenticate('local', function(err, user, info) {
            if(err) return next(err);
 
-           if(!user) document.alert(info)//return res.json(info);
+           if(!user) return res.json(info);
            
            req.logIn(user, function(err) {
              if(err) return next(err);

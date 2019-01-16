@@ -19,9 +19,9 @@ module.exports = function (passport) {
 	});
 	
 	passport.use(new GitHubStrategy({
-		clientID: configAuth.githubAuth.clientID,
+		clientID:     configAuth.githubAuth.clientID,
 		clientSecret: configAuth.githubAuth.clientSecret,
-		callbackURL: configAuth.githubAuth.callbackURL
+		callbackURL:  configAuth.githubAuth.callbackURL
 	},
 	function (token, refreshToken, profile, done) {
 		process.nextTick(function () {
@@ -56,13 +56,13 @@ module.exports = function (passport) {
                 if (err) return done(err); 
                 
                 if (!user) {
-                    return done(null, false, { message: 'Username not found. Please return to previous page to re-try or sign-up for a new account.' });
+                  return done(null, false, { message: 'Username not found. Please return to previous page to re-try or sign-up for a new account.' });
                 }
               
                 // check user password against stored hashed password
                 bcrypt.compare(password, user.signin.password, (err, validPassword) => {
                   if (!validPassword) {
-                      return done(null, false, { message: 'Incorrect password. Please return to previous page to re-try.' });
+                    return done(null, false, { message: 'Incorrect password. Please return to previous page to re-try.' });
                   }
                 
                   return done(null, user);
