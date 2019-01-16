@@ -1,9 +1,9 @@
 'use strict';
 
 var GitHubStrategy = require('passport-github').Strategy,
-	LocalStrategy = require('passport-local').Strategy,
-    User = require('../models/users'),
-    configAuth = require('./auth');
+	  LocalStrategy  = require('passport-local').Strategy,
+    User           = require('../models/users'),
+    configAuth     = require('./auth');
 
 module.exports = function (passport) {
 	
