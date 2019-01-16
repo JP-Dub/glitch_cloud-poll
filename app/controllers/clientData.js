@@ -341,7 +341,7 @@ if (pathname === '/signup') {
         $('#register').click(function(e) {
             e.preventDefault();
             var element = document.getElementById("regform").elements,
-                form = {};
+                form    = {};
             
             form.displayname = element.item(0).value;
             form.email = element.item(1).value || null;
