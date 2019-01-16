@@ -254,7 +254,7 @@ module.exports = function(user, path, form, forward) {
                     
                     newUser.save(function (err) {
                         if(err)return console.error(err);
-                        console.log(newUser, "newUser");
+                        //console.log(newUser, "newUser");
                     });
                     
                     forward({ "success": "Thank you for signing up! You'll be redirected to the sign in page."});    

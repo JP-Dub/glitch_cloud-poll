@@ -76,7 +76,7 @@ this.getPoll = function(req, res) {
     
         Users.find({_id: "5b339f5ae632a22c5ed59fc3"})// _id:"5ad773bb70b87312d878ac8a"})
             .exec(function (err, user) {
-            console.log(user)
+            //console.log(user)
                 if(err) return console.error(err);
             
                 var User = user[0];
