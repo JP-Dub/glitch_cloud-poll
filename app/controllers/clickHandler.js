@@ -254,24 +254,27 @@ this.createUser = function(req, res) {
                 if (user) {
                     return res.json({"user": "There is already a user with this name!"});
                 } else {                                      
-                    var currentTime = new Date(Date.now()).toString(),
-                        newUser     = new Users();
+                    
+                    var newUser = new Users();
                     
                     var encrypt = (err, encrypted) => {
+                      //console.log(encrypted)
                       return err ? console.log(err) : encrypted 
                     };
                   
-                    bcrypt.hash(password, 10, (err, hash) {
-                      newUser.date.time = currentTime;
+                    bcrypt.hash(password, 10, function encrypt(err, hash)  {
+                      //console.log(hash)
+                      newUser.date.time =  new Date(Date.now()).toString();
                       newUser.signin.account = "CP Account";
                       newUser.signin.displayName = displayName;
                       newUser.signin.email = email || null;
                       newUser.signin.password = hash;
                       
-                      encrypt(null, true);
+                      return encrypt(null, true);
                     });
                     
-                    if(cb) {
+                  
+                    if(encrypt) {
                       newUser.save(function (err) {
                           if(err) return console.error(err);
                           console.log(newUser, "newUser");
