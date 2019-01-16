@@ -257,19 +257,21 @@ this.createUser = function(req, res) {
                     var currentTime = new Date(Date.now()).toString(),
                         newUser     = new Users();
                     
-                    var encrypted = (results) => { results };
+                    var encrypt = (err, encrypted) => {
+                      return err ? console.log(err) : encrypted 
+                    };
                   
-                    bcrypt.hash(password, 10, (err, hash, encrypted => {
+                    bcrypt.hash(password, 10, (err, hash) {
                       newUser.date.time = currentTime;
                       newUser.signin.account = "CP Account";
                       newUser.signin.displayName = displayName;
                       newUser.signin.email = email || null;
                       newUser.signin.password = hash;
                       
-                      err ? console.log({'err': err}) : encrypted(true);
-                    }));
+                      encrypt(null, true);
+                    });
                     
-                    if(encrypted) {
+                    if(cb) {
                       newUser.save(function (err) {
                           if(err) return console.error(err);
                           console.log(newUser, "newUser");
