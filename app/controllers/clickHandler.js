@@ -257,12 +257,13 @@ this.createUser = function(req, res) {
                     var currentTime = new Date(Date.now()).toString(),
                         newUser     = new Users();
                     
-                    bcrypt.hash(password, 10, (err, hash) => {
+                    bcrypt.hash(password, 10, (err, hash, cb) => {
                       newUser.date.time = currentTime;
                       newUser.signin.account = "CP Account";
                       newUser.signin.displayName = displayName;
                       newUser.signin.email = email || null;
                       newUser.signin.password = hash;
+                      cb()
                     });
                   
                     newUser.save(function (err) {

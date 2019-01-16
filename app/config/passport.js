@@ -3,7 +3,8 @@
 var GitHubStrategy = require('passport-github').Strategy,
 	  LocalStrategy  = require('passport-local').Strategy,
     User           = require('../models/users'),
-    configAuth     = require('./auth');
+    configAuth     = require('./auth'),
+    bcrypt         = require('bcrypt');
 
 module.exports = function (passport) {
 	
@@ -51,13 +52,15 @@ module.exports = function (passport) {
 	passport.use(new LocalStrategy(
         function(username, password, done) {
             User.findOne({ "signin.displayName" : username }, function(err, user) {
+              console.log(user, 'user')
                 if (err) return done(err); 
-              
+                var validPassword;
+                bcrypt.compare(password, user.signin.password, (err, res) => err ? console.error(err) : validPassword = res );
                 
                 if (!user) {
                     return done(null, false, { message: 'Username not found. Please return to previous page to re-try or sign-up for a new account.' });
                 }
-                
+                console.log(validPassword)
                 if (user.signin.password !== password) {
                     return done(null, false, { message: 'Incorrect password. Please return to previous page to re-try.' });
                 }
