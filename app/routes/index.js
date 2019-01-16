@@ -1,5 +1,5 @@
 
-var path = process.cwd(),
+let path = process.cwd(),
     bP = require('body-parser'),
     urlEncPar = bP.urlencoded({extended: true}),
     ClickHandler = require(path + '/app/controllers/clickHandler.js');
@@ -11,7 +11,7 @@ module.exports = function(app, passport) {
   	   req.isAuthenticated() ? next() : res.redirect('/');
 	  }
     
-    var clickHandler = new ClickHandler();
+    let clickHandler = new ClickHandler();
     
     app.route('/')
         .get(function(req, res) {
@@ -43,49 +43,52 @@ module.exports = function(app, passport) {
     app.route('/signup/:user')
         .post(urlEncPar, clickHandler.createUser);
         
-	app.route('/api/:user')
-		.get(isLoggedIn, function (req, res) {
-		    if(req.user.signin.displayName) {
-		        var user = req.user.signin;
-		    } else
-		    if(req.user.github.displayName) {
-		        user = req.user.github;
-		    }
-		res.json(user);
-		});        
-       
-    app.route('/auth/github')
-		.get(passport.authenticate('github'));
+    app.route('/api/:user')
+      .get(isLoggedIn, function (req, res) {
+          var user;
+          if(req.user.signin.displayName) {
+              user = req.user.signin;
+          } else
+          if(req.user.github.displayName) {
+              user = req.user.github;
+          }
+      
+          res.json(user);
+      });        
 
-	app.route('/auth/github/callback')
-		.get(passport.authenticate('github', {
-			successRedirect: '/poll-creation',
-			failureRedirect: '/'
-		})); 
+    app.route('/auth/github')
+      .get(passport.authenticate('github'));
+
+    app.route('/auth/github/callback')
+      .get(passport.authenticate('github', {
+        successRedirect: '/poll-creation',
+        failureRedirect: '/'
+      })); 
 
     app.route('/auth/login')
-        .post(urlEncPar, function(req, res, next) {
-            passport.authenticate('local', function(err, user, info) {
-                if(err) return next(err);
-                
-                if(!user) return res.json(info);
-                req.logIn(user, function(err) {
-                    if(err) return next(err);
-                    return res.redirect('/poll-creation');
-                });
-            }) (req, res, next);
-        });
-        
+       .post(urlEncPar, function(req, res, next) {
+         passport.authenticate('local', function(err, user, info) {
+           if(err) return next(err);
+
+           if(!user) document.alert(info)//return res.json(info);
+           
+           req.logIn(user, function(err) {
+             if(err) return next(err);
+             return res.redirect('/poll-creation');
+           });
+         }) (req, res, next);
+       });
+
     app.route('/logout/:path')
-        .get( function(req, res) {
-            if(req.params.path === "creation") {
-                req.logout();
-                res.redirect('/');
-            } else {
-                req.logout();
-                res.redirect('/poll-vault');
-            }
-        });
+       .get( function(req, res) {
+         if(req.params.path === "creation") {
+           req.logout();
+           res.redirect('/');
+         } else {
+           req.logout();
+           res.redirect('/poll-vault');
+         }
+       });
 };
 
 /*
