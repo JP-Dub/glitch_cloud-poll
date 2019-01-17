@@ -496,12 +496,14 @@ button p {
 }
 
 #signin-btn, #register {
-  width: 30vmin;/*220px;*/
-  height: 5vmin;
+  width: 30vmin;/*30vmin 220px;*/
+  height: 4.5vmin; /*5vmin*/
 }
 
 #register {
-  margin-top: 1.2vmin;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5vmin;
 }
 
 form {
@@ -509,6 +511,7 @@ form {
   margin-top: 1vmin;/*10px;*/
   margin-left: 0; /*20px;*/
   text-align: left;
+  border: 1px solid lime;
 }
 
 #form {
