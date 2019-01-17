@@ -6,7 +6,7 @@
 var pathname = window.location.pathname;
 
 (function () {
-    
+
     function findVmin(x, y) {
       
       var height = $(document).height(),

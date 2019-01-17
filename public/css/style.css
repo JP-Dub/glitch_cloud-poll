@@ -483,6 +483,21 @@ button p {
   margin-top: 1.5vmin;/*15px;*/
 }
 
+form {
+  padding-top: 1vmin;
+  margin-top: 1vmin;/*10px;*/
+  margin-left: 0; /*20px;*/
+  text-align: left;
+}
+
+#form {
+    border-top: .6vmin double white; 
+}
+
+#regform {
+  margin-top: 0;
+}
+
 #github-btn, #account-btn {
   margin-top: 2.5vmin;/*12px;*/
   height: 5vmin;/*50px;*/
@@ -496,30 +511,13 @@ button p {
 }
 
 #signin-btn, #register {
-  width: 30vmin;/*30vmin 220px;*/
+  width: 20vmin;/*30vmin 220px;*/
   height: 4.5vmin; /*5vmin*/
-}
-
-#register {
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 1.5vmin;
 }
 
-form {
-  padding-top: 1vmin;
-  margin-top: 1vmin;/*10px;*/
-  margin-left: 0; /*20px;*/
-  text-align: left;
-  border: 1px solid lime;
-}
-
-#form {
-    border-top: .6vmin double white; 
-}
-
-#regform {
-  margin-top: 0;
+#register {
+  
 }
 
 .input {
