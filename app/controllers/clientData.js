@@ -4,6 +4,7 @@ var pathname = window.location.pathname;
 
 // controls data on Poll Creation page
 if (pathname === '/poll-creation') {
+    document.getElementById('selectUser').hide();
     
     (function () {
         
