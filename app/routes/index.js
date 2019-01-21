@@ -1,8 +1,8 @@
 
-let path = process.cwd(),
-    bP = require('body-parser'),
-    urlEncPar = bP.urlencoded({extended: true}),
-    ClickHandler = require(path + '/app/controllers/clickHandler.js');
+const path         = process.cwd(),
+      bP           = require('body-parser'),
+      urlEncPar    = bP.urlencoded({extended: true}),
+      ClickHandler = require(path + '/app/controllers/clickHandler.js');
 
 module.exports = function(app, passport) {
     app.set("json spaces", 2);
