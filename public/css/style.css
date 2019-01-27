@@ -505,8 +505,8 @@ form {
   margin-top: 1.5vmin;
 }
 
-#register {
-  
+.signup-bttn {
+  margin-top: 12px;  
 }
 
 .input {
