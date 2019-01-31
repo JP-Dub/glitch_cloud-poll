@@ -500,13 +500,13 @@ form {
 }
 
 #signin-btn, #register {
-  width: 20vmin;/*30vmin 220px;*/
+  width: 30vmin;/*30vmin 220px;*/
   height: 4.5vmin; /*5vmin*/
   margin-top: 1.5vmin;
 }
 
 /* added to control text on button */
-.signup-bttn {
+.signup-bttn, .signin-text {
   margin-top: 12px;  
 }
 
