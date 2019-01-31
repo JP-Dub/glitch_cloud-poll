@@ -6,7 +6,7 @@ dependencies:
   express-session: 1.15.6
   helmet: 3.15.0
   jquery-shadow-animation: 1.10.0
-  mongoose: 5.4.4
+  mongoose: 5.4.8
   nodemon: 1.18.9
   passport: 0.4.0
   passport-github: 1.1.0
@@ -1326,7 +1326,7 @@ packages:
       mongoose: '*'
     resolution:
       integrity: sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
-  /mongoose/5.4.4:
+  /mongoose/5.4.8:
     dependencies:
       async: 2.6.1
       bson: 1.1.0
@@ -1344,7 +1344,7 @@ packages:
     engines:
       node: '>=4.0.0'
     resolution:
-      integrity: sha512-KoYUFtgrXQ9Sxuf5IEE0Y2LswWGhHiN27bxtObANxMgXbuNLTtLB3xaep8jITUDitG4kkI+FKElUJH4uY8G2Bw==
+      integrity: sha512-2wgBi1LBxL/pcG0nNP8zXBLRmWZFzg8pb2MH4JkMPIxP/HGtQQEP0DbG1Yzy+Igsp3M1+V/59uXW37O2Fg5mBQ==
   /mpath/0.5.1:
     dev: false
     engines:
@@ -2231,7 +2231,7 @@ specifiers:
   express-session: ^1.15.6
   helmet: ^3.15.0
   jquery-shadow-animation: ^1.10.0
-  mongoose: ^5.4.3
+  mongoose: ^5.4.8
   nodemon: ^1.18.9
   passport: ^0.4.0
   passport-github: ^1.1.0

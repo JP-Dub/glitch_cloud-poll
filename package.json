@@ -29,7 +29,7 @@
     "express": "^4.16.4",
     "express-session": "^1.15.6",
     "jquery-shadow-animation": "^1.10.0",
-    "mongoose": "^5.4.3",
+    "mongoose": "^5.4.8",
     "nodemon": "^1.18.9",
     "passport": "^0.4.0",
     "passport-github": "^1.1.0",
