@@ -8,10 +8,13 @@ var routes   = require('./app/routes/index.js'),
     helmet   = require('helmet'),
     app      = express();
 
-require('dotenv').load();
+require('dotenv').config();
 require('./app/config/passport')(passport);
 
-mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true});
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser : true,
+  useFindAndModify: false
+});
 mongoose.Promise = global.Promise;
 
 
