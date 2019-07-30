@@ -106,7 +106,7 @@ function ClickHandler () {
       //post
       if(req.path === '/poll/save') {
 
-          var ans = form.answers, 
+          var ans   = form.answers, 
               quest = form.question;
 
               process(ans, quest, function(question, choice) {
